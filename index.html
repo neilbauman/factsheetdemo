@@ -11,6 +11,7 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <style type="text/css">
 #fijiSheet {
   clear: both;
@@ -20,6 +21,7 @@
   padding: 10px;
   margin: 10px;
   border: 1px solid #999;
+  font-family: "Verdana", sans-serif;
 }
 @media (min-width: 900px) {
   #fijiSheet section {
@@ -33,6 +35,7 @@
 #Highlights {
   background-color:#7f1416;
   color: white;
+    font-family: "Verdana", sans-serif;
 }
 #LeftImage {
   padding: 0 !important;
@@ -53,6 +56,13 @@
 #ContextResponse {
   background-color:#b7b8ba;
 }</style>
+    
+    
+
+    
+    
+    
+    
 <div class="clearfix" id="fijiSheet">
 	<section id="LeftImage"><img src="https://www.dropbox.com/s/b0w2m2uogifuxfr/20160314_150714.jpg?dl=1" /></section>
 	<section id="Highlights">
@@ -80,6 +90,11 @@
 	</section>
 	<div v-text="data.gsx$humlead.$t">&nbsp;</div>
 </div>
+    
+    
+    
+    
+    
 <script>
 (function($) {
  // ID of the Google Spreadsheet
