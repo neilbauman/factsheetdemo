@@ -54,6 +54,31 @@
 #ContextResponse {
   background-color:#b7b8ba;
 }</style>
+    
+    
+ <script>
+(function($) {
+ // ID of the Google Spreadsheet
+ var spreadsheetID = "1HBAYLxrDFaa2LOrlU_ZDGapD57UE3otjImiddrfKoic";
+ var sheetNumber = 5;
+ 
+ // Make sure it is public or set to Anyone with link can view 
+ var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/" + sheetNumber + "/public/values?alt=json";
+  $.getJSON(url, function(data) {
+    var app = new Vue({
+        el: '#fijiSheet',
+        data: {
+            data: data.feed.entry[0]
+        }
+    });
+  });
+})(jQuery);
+</script>   
+    
+    
+    
+    
+    
 <div class="clearfix" id="fijiSheet">
 	<section id="LeftImage"><img src="https://www.dropbox.com/s/b0w2m2uogifuxfr/20160314_150714.jpg?dl=1" /></section>
 	<section id="Highlights">
