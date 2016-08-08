@@ -63,6 +63,9 @@
 #header img {
   width: 100%;
 }  
+#Challenges {
+  display:inline;
+}
     
     </style>
     
@@ -105,6 +108,11 @@
     <section id="ContextResponse">
 		<h4>Context and Response</h4>
 		<p v-text="data.gsx$context.$t">&nbsp;</p>
+	</section>
+    
+    <section id="Challenges">
+		<h4>Challenges</h4>
+		<p v-text="data.gsx$challenges.$t">&nbsp;</p>
 	</section>
 	
     <div v-text="data.gsx$humlead.$t">&nbsp;</div>
