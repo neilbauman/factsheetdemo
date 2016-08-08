@@ -64,12 +64,20 @@
     
     
 <div class="clearfix" id="fijiSheet">
-	<section id="LeftImage"><img src="https://www.dropbox.com/s/b0w2m2uogifuxfr/20160314_150714.jpg?dl=1" /></section>
-	<section id="Highlights">
+    
+    <section id="header">Logo
+    </section>
+	
+    <section id="LeftImage"><img src="https://www.dropbox.com/s/b0w2m2uogifuxfr/20160314_150714.jpg?dl=1" />
+    </section>
+	
+    
+    <section id="Highlights">
 		<h4>Highlights</h4>
 		<p v-text="data.gsx$highlights.$t">&nbsp;</p>
 	</section>
-	<section id="StrategyAndObjectives">
+	
+    <section id="StrategyAndObjectives">
 		<h4>Cluster Strategy and Objectives</h4>
 		<p v-text="data.gsx$sumstrategy.$t">&nbsp;</p>
 		<ul>
@@ -84,12 +92,14 @@
 			</li>
 		</ul>
 	</section>
-	<section id="ContextResponse">
+	
+    <section id="ContextResponse">
 		<h4>Context and Response</h4>
 		<p v-text="data.gsx$context.$t">&nbsp;</p>
 	</section>
-	<div v-text="data.gsx$humlead.$t">&nbsp;</div>
-</div>
+	
+    <div v-text="data.gsx$humlead.$t">&nbsp;</div>
+    </div>
     
     
     
