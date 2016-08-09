@@ -147,6 +147,28 @@
 	
         <div v-text="data.gsx$humlead.$t">&nbsp;</div>
         
+        <section id="ContextResponse">
+            <h4>Context and Response</h4>
+            <p v-text="data.gsx$context.$t">&nbsp;</p>
+        </section>
+        
+        <section id="StrategyAndObjectives">
+		  <h4>Cluster Strategy and Objectives</h4>
+		  <p v-text="data.gsx$sumstrategy.$t">&nbsp;</p>
+		  <ul>
+			 <li><strong>Objective 1</strong>:
+				<div v-text="data.gsx$obj2.$t">&nbsp;</div>
+			 </li>
+			 <li><strong>Objective 2</strong>:
+				<div v-text="data.gsx$obj2.$t">&nbsp;</div>
+			 </li>
+			 <li><strong>Objective 3</strong>:
+				<div v-text="data.gsx$obj3.$t">&nbsp;</div>
+			 </li>
+		  </ul>
+	    </section>
+        
+        
         
     </div>
     
