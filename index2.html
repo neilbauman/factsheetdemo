@@ -1,0 +1,174 @@
+<html>
+    <head>
+        <title>FactSheet Dashboard 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+              
+    </head>
+<body>  
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<style type="text/css">
+
+/*  GRID OF TWO   ============================================================================= */
+
+
+#span_2_of_2 {
+	width: 100%;
+}
+
+#span_1_of_2 {
+	width: 49.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	#span_2_of_2 {
+		width: 100%; 
+	}
+	#span_1_of_2 {
+		width: 100%; 
+	}
+}
+
+#fijiSheet {
+  clear: both;
+}
+#fijiSheet section {
+  float: left;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #999;
+  font-family: "Verdana", sans-serif;
+}
+@media (min-width: 900px) {
+  #fijiSheet section {
+    width: calc(50% - 20px);
+  }
+}
+#fijiSheet section h4 {
+  text-transform: uppercase;
+  margin-top: 0;
+}
+#Highlights {
+  background-color:#7f1416;
+  color: white;
+    font-family: "Verdana", sans-serif;
+}
+#LeftImage {
+  padding: 0 !important;
+  line-height: 0;
+}
+#LeftImage img {
+  width: 100%;
+}
+#RightImage {
+  width: 300px;
+  float:right;
+  background-color:#7f1416;
+  color: white;
+}
+#StrategyAndObjectives {
+  display:inline;
+}
+#ContextResponse {
+  background-color:#b7b8ba;
+}
+#header {
+  padding: 0 !important;
+  line-height: 0;
+}
+#header img {
+  width: 100%;
+}  
+#Challenges {
+  display:inline;
+}
+
+  </style>
+  
+  
+      
+<div class="clearfix" id="fijiSheet">
+    
+    <section id="header"><img src="https://www.dropbox.com/s/pizqbujqiuho4ey/Shelter%20Cluster%20Fiji%20Logo%20%28cropped%29.jpg?dl=1" />
+    </section>
+    
+    
+<div class="section group">
+	<div class="col span_1_of_2">
+	   
+        <section id="LeftImage"><img src="https://www.dropbox.com/s/b0w2m2uogifuxfr/20160314_150714.jpg?dl=1" />
+        </section><br>
+      
+        <section id="Highlights">
+		  <h4>Highlights</h4>
+		  <p v-text="data.gsx$highlights.$t">&nbsp;</p>
+	    </section>
+	
+        <section id="StrategyAndObjectives">
+		  <h4>Cluster Strategy and Objectives</h4>
+		  <p v-text="data.gsx$sumstrategy.$t">&nbsp;</p>
+		  <ul>
+			 <li><strong>Objective 1</strong>:
+				<div v-text="data.gsx$obj2.$t">&nbsp;</div>
+			 </li>
+			 <li><strong>Objective 2</strong>:
+				<div v-text="data.gsx$obj2.$t">&nbsp;</div>
+			 </li>
+			 <li><strong>Objective 3</strong>:
+				<div v-text="data.gsx$obj3.$t">&nbsp;</div>
+			 </li>
+		  </ul>
+	    </section>
+	
+        <section id="ContextResponse">
+            <h4>Context and Response</h4>
+            <p v-text="data.gsx$context.$t">&nbsp;</p>
+        </section>
+
+        <section id="Challenges">
+            <h4>Challenges</h4>
+            <p v-text="data.gsx$challenges.$t">&nbsp;</p>
+        </section>
+
+      
+	   </div>    
+	
+    <div class="col span_2_of_2">
+    
+    
+	
+        <div v-text="data.gsx$humlead.$t">&nbsp;</div>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+<script>
+(function($) {
+ // ID of the Google Spreadsheet
+ var spreadsheetID = "1HBAYLxrDFaa2LOrlU_ZDGapD57UE3otjImiddrfKoic";
+ var sheetNumber = 5;
+ 
+ // Make sure it is public or set to Anyone with link can view 
+ var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/" + sheetNumber + "/public/values?alt=json";
+  $.getJSON(url, function(data) {
+    var app = new Vue({
+        el: '#fijiSheet',
+        data: {
+            data: data.feed.entry[0]
+        }
+    });
+  });
+})(jQuery);
+</script>
